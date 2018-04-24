@@ -41,7 +41,7 @@ public class NewsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_news, container, false);
 
         //ButterKnife.bind(rootView);
-        newsRecyclerView = (RecyclerView) rootView.findViewById(R.id.newsRecyclerView);
+        newsRecyclerView = rootView.findViewById(R.id.newsRecyclerView);
 
         newsRecyclerView.setHasFixedSize(true);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -124,9 +124,9 @@ public class NewsFragment extends Fragment {
 
             NewsViewHolder(View itemView) {
                 super(itemView);
-                newsTitle = (TextView) itemView.findViewById(R.id.newsTitle);
-                newsDate = (TextView) itemView.findViewById(R.id.newsDate);
-                newsContent = (TextView) itemView.findViewById(R.id.newsContent);
+                newsTitle = itemView.findViewById(R.id.newsTitle);
+                newsDate = itemView.findViewById(R.id.newsDate);
+                newsContent = itemView.findViewById(R.id.newsContent);
             }
         }
     }

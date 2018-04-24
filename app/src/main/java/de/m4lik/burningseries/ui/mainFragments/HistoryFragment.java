@@ -37,7 +37,8 @@ public class HistoryFragment extends Fragment {
 
     List<HistoryListItem> historyList = new ArrayList<>();
 
-    public HistoryFragment() {}
+    public HistoryFragment() {
+    }
 
 
     @Override

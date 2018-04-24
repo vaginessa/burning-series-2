@@ -40,7 +40,7 @@ public class SingleShotService {
     public synchronized boolean isFirstTime(String action) {
         synchronized (lock) {
             Set<String> actions = new HashSet<>(preferences.getStringSet(
-                    KEY_ACTIONS, Collections.<String>emptySet()));
+                    KEY_ACTIONS, Collections.emptySet()));
 
             if (actions.add(action)) {
                 // store modifications

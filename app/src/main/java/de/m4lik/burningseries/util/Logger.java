@@ -23,7 +23,7 @@ public class Logger {
 
     public static void genreSelection(String genre) {
         Answers.getInstance().logCustom(new CustomEvent(EVENT_GENRE_SELECTED)
-            .putCustomAttribute("Genre", genre));
+                .putCustomAttribute("Genre", genre));
         Log.i("BS-Logger", "Event logged: " + EVENT_GENRE_SELECTED);
     }
 

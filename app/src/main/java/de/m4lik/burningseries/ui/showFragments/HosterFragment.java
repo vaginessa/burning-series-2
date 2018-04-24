@@ -77,7 +77,8 @@ public class HosterFragment extends Fragment implements Callback<EpisodeObj> {
     private int linkID;
 
 
-    public HosterFragment() {}
+    public HosterFragment() {
+    }
 
 
     @Override
@@ -144,7 +145,7 @@ public class HosterFragment extends Fragment implements Callback<EpisodeObj> {
                         String defaultPlayer = hosterList.get(position).isSupported() ? "internal" : "appbrowser";
                         if (Settings.of(getActivity()).alarmOnMobile() &&
                                 AndroidUtility.isOnMobile(getActivity())) {
-                            TextView idView = (TextView) view.findViewById(R.id.linkId);
+                            TextView idView = view.findViewById(R.id.linkId);
                             linkID = Integer.parseInt(idView.getText().toString());
 
                             System.out.println(linkID);
@@ -155,7 +156,7 @@ public class HosterFragment extends Fragment implements Callback<EpisodeObj> {
                             dialog.show(getActivity().getSupportFragmentManager(), null);
 
                         } else {
-                            TextView idView = (TextView) view.findViewById(R.id.linkId);
+                            TextView idView = view.findViewById(R.id.linkId);
                             linkID = Integer.parseInt(idView.getText().toString());
                             showVideo(linkID, defaultPlayer);
                         }
@@ -339,7 +340,7 @@ public class HosterFragment extends Fragment implements Callback<EpisodeObj> {
         @Override
         protected void onPreExecute() {
             dialog = BusyDialog.newInstace("Hoster wird geöffnet...");
-            dialog.show( getActivity().getSupportFragmentManager(), null);
+            dialog.show(getActivity().getSupportFragmentManager(), null);
             super.onPreExecute();
         }
 

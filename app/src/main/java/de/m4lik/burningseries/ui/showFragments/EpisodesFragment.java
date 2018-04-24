@@ -52,7 +52,8 @@ public class EpisodesFragment extends Fragment implements Callback<SeasonObj> {
 
     boolean loaded = false;
 
-    public EpisodesFragment() {}
+    public EpisodesFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -138,10 +139,10 @@ public class EpisodesFragment extends Fragment implements Callback<SeasonObj> {
                                     @Override
                                     public void onResponse(Call<VideoObj> call, Response<VideoObj> response) {
 
-                                        TextView titleGerView = (TextView) view.findViewById(R.id.episodeTitleGer);
+                                        TextView titleGerView = view.findViewById(R.id.episodeTitleGer);
                                         titleGerView.setTextColor(ContextCompat.getColor(getActivity().getApplicationContext(), android.R.color.black));
 
-                                        ImageView fav = (ImageView) view.findViewById(R.id.watchedImageView);
+                                        ImageView fav = view.findViewById(R.id.watchedImageView);
                                         fav.setImageDrawable(null);
                                     }
 

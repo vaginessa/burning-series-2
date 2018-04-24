@@ -80,7 +80,9 @@ public class ShowSyncDialog extends DialogBase {
                 .subscribeOn(BackgroundScheduler.instance())
                 .unsubscribeOn(BackgroundScheduler.instance())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doAfterTerminate(() -> { if (!Settings.of(activity).getUserSession().equals("")) syncFavs(activity);})
+                .doAfterTerminate(() -> {
+                    if (!Settings.of(activity).getUserSession().equals("")) syncFavs(activity);
+                })
                 .share();
 
         ShowSyncDialog dialog = new ShowSyncDialog(progress, "Serien werden geladen...");

@@ -63,7 +63,8 @@ public class GenresFragment extends Fragment {
         }
     });
 
-    public GenresFragment() {}
+    public GenresFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

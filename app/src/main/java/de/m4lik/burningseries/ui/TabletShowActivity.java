@@ -50,12 +50,9 @@ import de.m4lik.burningseries.ui.dialogs.MobileDataAlertDialog;
 import de.m4lik.burningseries.ui.dialogs.PlayerChooserDialog;
 import de.m4lik.burningseries.ui.listitems.EpisodeListItem;
 import de.m4lik.burningseries.ui.listitems.HosterListItem;
-import de.m4lik.burningseries.ui.listitems.PlayerChooserListItem;
 import de.m4lik.burningseries.ui.listitems.SeasonListItem;
-import de.m4lik.burningseries.ui.showFragments.HosterFragment;
 import de.m4lik.burningseries.ui.viewAdapters.EpisodesRecyclerAdapter;
 import de.m4lik.burningseries.ui.viewAdapters.HosterRecyclerAdapter;
-import de.m4lik.burningseries.ui.viewAdapters.PlayerChooserListAdapter;
 import de.m4lik.burningseries.ui.viewAdapters.SeasonsListAdapter;
 import de.m4lik.burningseries.util.AndroidUtility;
 import de.m4lik.burningseries.util.DialogCallback;
@@ -69,7 +66,7 @@ import retrofit2.Response;
 import static de.m4lik.burningseries.database.SeriesContract.historyTable;
 import static de.m4lik.burningseries.services.ThemeHelperService.theme;
 
-public class TabletShowActivity extends ActivityBase implements DialogCallback{
+public class TabletShowActivity extends ActivityBase implements DialogCallback {
 
     Integer currentShow;
     Integer currentSeason;
@@ -298,14 +295,14 @@ public class TabletShowActivity extends ActivityBase implements DialogCallback{
                         EpisodeListItem clickedEpisode = episodes.get(position);
                         episodeName = clickedEpisode.getTitleGer().equals("") ? clickedEpisode.getTitle() : clickedEpisode.getTitleGer();
                         episodeNameTV.setText(episodeName);
-                        TextView idView = (TextView) view.findViewById(R.id.episodeId);
+                        TextView idView = view.findViewById(R.id.episodeId);
                         showEpisode(currentSeason, Integer.parseInt(idView.getText().toString()));
                     }
 
                     @Override
                     public void onLongItemClick(View view, int position) {
 
-                        final TextView idView = (TextView) view.findViewById(R.id.episodeId);
+                        final TextView idView = view.findViewById(R.id.episodeId);
                         Integer selectedEpisode = Integer.parseInt(idView.getText().toString());
 
                         final API api = new API();
@@ -326,11 +323,11 @@ public class TabletShowActivity extends ActivityBase implements DialogCallback{
                                     @Override
                                     public void onResponse(Call<VideoObj> call, Response<VideoObj> response) {
 
-                                        TextView titleGerView = (TextView) view.findViewById(R.id.episodeTitleGer);
+                                        TextView titleGerView = view.findViewById(R.id.episodeTitleGer);
                                         if (!Settings.of(TabletShowActivity.this).isDarkTheme())
                                             titleGerView.setTextColor(ContextCompat.getColor(TabletShowActivity.this, android.R.color.black));
 
-                                        ImageView fav1 = (ImageView) view.findViewById(R.id.watchedImageView);
+                                        ImageView fav1 = view.findViewById(R.id.watchedImageView);
                                         fav1.setImageDrawable(null);
                                     }
 
@@ -363,7 +360,7 @@ public class TabletShowActivity extends ActivityBase implements DialogCallback{
                         String defaultPlayer = hosterList.get(position).isSupported() ? "internal" : "appbrowser";
                         if (Settings.of(TabletShowActivity.this).alarmOnMobile() &&
                                 AndroidUtility.isOnMobile(TabletShowActivity.this)) {
-                            TextView idView = (TextView) view.findViewById(R.id.linkId);
+                            TextView idView = view.findViewById(R.id.linkId);
                             linkID = Integer.parseInt(idView.getText().toString());
 
                             System.out.println(linkID);
@@ -373,7 +370,7 @@ public class TabletShowActivity extends ActivityBase implements DialogCallback{
                             dialog.show(TabletShowActivity.this.getSupportFragmentManager(), null);
 
                         } else {
-                            TextView idView = (TextView) view.findViewById(R.id.linkId);
+                            TextView idView = view.findViewById(R.id.linkId);
                             linkID = Integer.parseInt(idView.getText().toString());
                             showVideo(linkID, defaultPlayer);
                         }
@@ -455,7 +452,7 @@ public class TabletShowActivity extends ActivityBase implements DialogCallback{
 
         seasonsListView.setAdapter(new SeasonsListAdapter(this, seasons));
         seasonsListView.setOnItemClickListener((parent, view, position, id) ->
-            showSeason(Integer.parseInt(((TextView) view.findViewById(R.id.seasonId)).getText().toString()))
+                showSeason(Integer.parseInt(((TextView) view.findViewById(R.id.seasonId)).getText().toString()))
         );
     }
 

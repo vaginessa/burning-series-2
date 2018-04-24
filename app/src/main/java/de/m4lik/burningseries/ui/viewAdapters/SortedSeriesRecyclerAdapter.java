@@ -145,12 +145,12 @@ public class SortedSeriesRecyclerAdapter extends RecyclerView.Adapter<SortedSeri
             binding.setShow(item);
             binding.getRoot().findViewById(R.id.listItemContainer).setBackground(ContextCompat.getDrawable(context, theme().listItemBackground));
 
-            ImageView coverImage = (ImageView) binding.getRoot().findViewById(R.id.coverImage);
+            ImageView coverImage = binding.getRoot().findViewById(R.id.coverImage);
 
             if (Settings.of(context).showCovers()) {
-                    Glide.with(context)
-                            .load(Uri.parse("https://bs.to/public/img/cover/" + item.getId() + ".jpg"))
-                            .into(coverImage);
+                Glide.with(context)
+                        .load(Uri.parse("https://bs.to/public/img/cover/" + item.getId() + ".jpg"))
+                        .into(coverImage);
             } else {
                 coverImage.setVisibility(View.GONE);
             }

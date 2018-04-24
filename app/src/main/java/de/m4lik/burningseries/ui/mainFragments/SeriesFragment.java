@@ -119,7 +119,7 @@ public class SeriesFragment extends Fragment {
                         c.moveToFirst();
                         Boolean isFav = c.getInt(c.getColumnIndex(SeriesContract.seriesTable.COLUMN_NAME_ISFAV)) == 1;
 
-                        ImageView fav = (ImageView) view.findViewById(R.id.favImageView);
+                        ImageView fav = view.findViewById(R.id.favImageView);
 
                         if (!Settings.of(getActivity()).isDarkTheme())
                             fav.setImageDrawable(ContextCompat.getDrawable(getActivity(),

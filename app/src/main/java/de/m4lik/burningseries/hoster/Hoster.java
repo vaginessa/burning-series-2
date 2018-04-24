@@ -12,7 +12,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -109,7 +108,7 @@ public class Hoster {
     }
 
 
-    String GetRequestString(String url, Map<String, String> map) throws MalformedURLException, IOException {
+    String GetRequestString(String url, Map<String, String> map) throws IOException {
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
         httpURLConnection.setRequestMethod("GET");
         httpURLConnection.setRequestProperty("User-Agent", selectUAS());
@@ -142,7 +141,7 @@ public class Hoster {
         OutputStream outputStream = httpURLConnection.getOutputStream();
 
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-        bufferedWriter.write(map2URLEncodedString((Map) dataArgs));
+        bufferedWriter.write(map2URLEncodedString(dataArgs));
         bufferedWriter.flush();
         bufferedWriter.close();
 

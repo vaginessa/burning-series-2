@@ -95,8 +95,8 @@ public class FavsFragment extends Fragment {
 
                     @Override
                     public void onItemClick(View view, int position) {
-                        TextView idView = (TextView) view.findViewById(R.id.seriesId);
-                        TextView nameView = (TextView) view.findViewById(R.id.seriesTitle);
+                        TextView idView = view.findViewById(R.id.seriesId);
+                        TextView nameView = view.findViewById(R.id.seriesTitle);
                         showSeries(Integer.parseInt(idView.getText().toString()), nameView.getText().toString());
                     }
 

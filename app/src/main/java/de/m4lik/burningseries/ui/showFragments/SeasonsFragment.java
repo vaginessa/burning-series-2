@@ -45,7 +45,8 @@ public class SeasonsFragment extends Fragment implements Callback<SeasonObj> {
 
     Boolean loaded = false;
 
-    public SeasonsFragment() {}
+    public SeasonsFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,9 +56,9 @@ public class SeasonsFragment extends Fragment implements Callback<SeasonObj> {
 
         context = getActivity();
 
-        seasonsListView = (ListView) rootView.findViewById(R.id.seasonsListView);
+        seasonsListView = rootView.findViewById(R.id.seasonsListView);
 
-        LinearLayout seasonsContainer = (LinearLayout) rootView.findViewById(R.id.seasonscontainer);
+        LinearLayout seasonsContainer = rootView.findViewById(R.id.seasonscontainer);
         seasonsContainer.setVisibility(View.VISIBLE);
 
         Integer selectedShow = ((ShowActivity) getActivity()).getSelectedShow();
@@ -119,7 +120,7 @@ public class SeasonsFragment extends Fragment implements Callback<SeasonObj> {
         seasonsListView.requestLayout();
 
         seasonsListView.setOnItemClickListener((parent, view, position, id) -> {
-            TextView idView = (TextView) view.findViewById(R.id.seasonId);
+            TextView idView = view.findViewById(R.id.seasonId);
             showSeason(Integer.parseInt(idView.getText().toString()));
         });
     }

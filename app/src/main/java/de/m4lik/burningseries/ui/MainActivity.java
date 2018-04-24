@@ -122,7 +122,7 @@ public class MainActivity extends ActivityBase
         navigationView.setNavigationItemSelectedListener(this);
 
         if (!isTablet) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             toggle.syncState();
@@ -134,7 +134,7 @@ public class MainActivity extends ActivityBase
                 .compose(RxLifecycleAndroid.bindActivity(lifecycle()))
                 .subscribe(o -> UpdateDialog.checkForUpdates(MainActivity.this, false));
 
-        TextView userTextView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.nav_username_text);
+        TextView userTextView = navigationView.getHeaderView(0).findViewById(R.id.nav_username_text);
         userTextView.setText(userName);
 
         if (userSession.equals("")) {
@@ -157,7 +157,7 @@ public class MainActivity extends ActivityBase
         }
 
         if (!isTablet) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             if (!drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.openDrawer(GravityCompat.START);
                 return;
@@ -297,7 +297,7 @@ public class MainActivity extends ActivityBase
         }
 
         if (!isTablet) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
         }
         return true;

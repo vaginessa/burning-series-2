@@ -10,7 +10,8 @@ public class PlayerChooserListItem {
 
     private String lable;
     private String type;
-    @DrawableRes private int icon;
+    @DrawableRes
+    private int icon;
 
     public PlayerChooserListItem(String lable, String type, int icon) {
         this.lable = lable;

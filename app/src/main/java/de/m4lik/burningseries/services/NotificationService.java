@@ -44,7 +44,7 @@ public class NotificationService {
      * Creates a new v7 notification buidler
      */
     private static NotificationCompat.Builder newNotificationBuilder(Context context) {
-        return new android.support.v7.app.NotificationCompat.Builder(context);
+        return new NotificationCompat.Builder(context);
     }
 
     public void showUpdateNotification(Update update) {

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.StrictMode;
 
 import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+
 import net.danlew.android.joda.JodaTimeAndroid;
 
 import butterknife.ButterKnife;
@@ -15,6 +15,7 @@ import de.m4lik.burningseries.services.ThemeHelperService;
 import de.m4lik.burningseries.util.Lazy;
 import de.m4lik.burningseries.util.LooperScheduler;
 import de.m4lik.burningseries.util.Settings;
+import io.fabric.sdk.android.Fabric;
 import rx.Scheduler;
 import rx.android.plugins.RxAndroidPlugins;
 import rx.android.plugins.RxAndroidSchedulersHook;

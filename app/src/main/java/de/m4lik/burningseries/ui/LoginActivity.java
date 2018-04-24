@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<Respons
 
         super.onCreate(savedInstanceState);
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.login_button);
+        Button mEmailSignInButton = findViewById(R.id.login_button);
         mEmailSignInButton.setOnClickListener(view -> attemptLogin());
     }
 

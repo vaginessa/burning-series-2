@@ -228,6 +228,8 @@ public class ShowSyncService {
             this.finished = finished;
         }
 
-        public boolean finished() { return finished; }
+        public boolean finished() {
+            return finished;
+        }
     }
 }

@@ -29,7 +29,7 @@ public class SeriesRecyclerAdapter extends RecyclerView.Adapter<SeriesRecyclerAd
 
     private List<ShowListItem> list;
     private Context context;
-    
+
     public SeriesRecyclerAdapter(Context context, List<ShowListItem> list) {
         this.context = context;
         this.list = list;
@@ -66,7 +66,7 @@ public class SeriesRecyclerAdapter extends RecyclerView.Adapter<SeriesRecyclerAd
             binding.setShow(item);
             binding.getRoot().findViewById(R.id.listItemContainer).setBackground(ContextCompat.getDrawable(context, theme().listItemBackground));
 
-            ImageView coverImage = (ImageView) binding.getRoot().findViewById(R.id.coverImage);
+            ImageView coverImage = binding.getRoot().findViewById(R.id.coverImage);
 
             if (Settings.of(context).showCovers()) {
                 Glide.with(context)

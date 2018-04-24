@@ -49,7 +49,8 @@ public class DownloadService {
                 // clear all previous files
                 File[] files = directory.listFiles(new PatternFilenameFilter("bs-update.*apk"));
                 for (File file : files) {
-                    if (!file.delete()) {Crashlytics.log("Could not delete file: " + file);
+                    if (!file.delete()) {
+                        Crashlytics.log("Could not delete file: " + file);
                     }
                 }
 

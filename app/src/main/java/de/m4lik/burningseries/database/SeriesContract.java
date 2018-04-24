@@ -65,7 +65,8 @@ public final class SeriesContract {
     static final String SQL_DELETE_NEWS_TABLE =
             "DROP TABLE IF EXISTS " + newsTable.TABLE_NAME;
 
-    public SeriesContract() {}
+    public SeriesContract() {
+    }
 
     public static abstract class seriesTable implements BaseColumns {
         public static final String TABLE_NAME = "seriesTable";

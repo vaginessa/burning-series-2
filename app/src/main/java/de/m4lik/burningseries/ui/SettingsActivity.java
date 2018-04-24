@@ -11,6 +11,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.view.MenuItem;
 
@@ -78,7 +79,7 @@ public class SettingsActivity extends ActivityBase {
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private static android.support.v4.app.NotificationCompat.Builder newNotificationBuilder(Context context) {
-            return new android.support.v7.app.NotificationCompat.Builder(context);
+            return new NotificationCompat.Builder(context);
         }
 
         @Override
